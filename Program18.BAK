@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <graphics.h>
+#include <conio.h>
+
+int main()
+{
+   int gd = DETECT,gm,left=100,top=100,right=200,bottom=200,x= 300,y=150,radius=50,option;
+a: printf("\n Press 1 for bar and rectangle, 2 for line and circle, 3 for ellipse, 4 for outttext , 5 for polygon, 6 to exit:\n");
+   scanf("%d",&option);
+   switch(option)
+   {
+	case 1:
+		{
+			   initgraph(&gd,&gm,"C:\TURBOC3\BGI");
+			   bar(400, 100, 500, 200);
+			   rectangle(left, top, right, bottom);
+			   closegraph();
+			   goto a;
+		}
+	case 2:
+		{
+			
+			   initgraph(&gd,&gm,"C:\TURBOC3\BGI");
+			   line(90, 250, 510, 250);
+			   circle(x, y, radius);
+			   closegraph();
+			   goto a;
+		}
+	case 3:
+		{
+			
+			   initgraph(&gd,&gm,"C:\TURBOC3\BGI");
+			   ellipse(x, y + 200, 0, 360, 100, 50);
+			   closegraph();
+			   goto a;
+		}
+        case 4:
+		{
+			
+			   initgraph(&gd,&gm,"C:\TURBOC3\BGI");
+			   outtextxy(left + 100, top + 325, "C graphics, simple base shapes");
+			   closegraph();
+			   goto a;
+	   	}
+	case 5:
+		{
+			   printf("\nPolygon not supported by turbo c");
+			   goto a;
+		}
+	case 6:
+		{
+			exit(0);
+	        }
+	default:
+		{
+			printf("\Invalid Input\n");
+			goto a;
+		}
+	}
+   return 0;
+   }
+
